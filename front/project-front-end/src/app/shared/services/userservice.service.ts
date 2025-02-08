@@ -1,7 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-const API_URL='http://localhost:8080/auth';
+const API_URL_AUTH='/api/auth';
+const API_URL_USER='/api/user';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,14 @@ export class UserserviceService {
     http: HttpClient = inject(HttpClient)
 
     registerUser(user: any) {
-        return this.http.post(`${API_URL}/signup`, user)
+        return this.http.post<{msg: string}>(`${API_URL_AUTH}/angular/signup`, user)
+    }
+
+    loginUser(user: any) {
+        return this.http.post(`${API_URL_AUTH}/angular/login`, user)
+    }
+
+    getUsers() {
+        return this.http.get(`${API_URL_USER}/angular`)
     }
 }
