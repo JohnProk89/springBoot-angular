@@ -26,8 +26,8 @@ export class UserRegisterComponent {
     }
 
     userRegisterForm = new FormGroup({
-        username: new FormControl(),
-        password: new FormControl()
+        username: new FormControl('', Validators.required),
+        password: new FormControl('', Validators.required)
     })
 
     onSubmit(value:any){

@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { UserserviceService } from '../../shared/services/userservice.service';
 import {MatCardModule} from '@angular/material/card';
+import { MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-user-getuser',
@@ -10,5 +11,8 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class UserGetuserComponent {
     userService = inject(UserserviceService);
-    userName: string = '';
+
+    onClick(){
+        this.userService.getUsers().subscribe()
+    }
 }

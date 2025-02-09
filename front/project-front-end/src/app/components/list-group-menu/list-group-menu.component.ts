@@ -11,6 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class ListGroupMenuComponent {
     menu : MenuEntry[] = [
         { text : "User Register", routerLink: "user-register"},
-        { text : "Get User", routerLink: "user-get-user"}
+        { text : "Login User", routerLink: "login-user"},
+        { text : "Get User", routerLink: "get-user"}
     ]
 }
